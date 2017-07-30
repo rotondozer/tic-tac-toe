@@ -1,3 +1,8 @@
+h2 {
+  border: 1px dotted green;
+  text-align: center;
+}
+
 .game-side {
   background-color: orange;
   height: 400px;
@@ -8,11 +13,6 @@
   position: relative;
 }
 
-.moves {
-  background-color: red;
-  height: 400px;
-}
-
 .game-board-square {
   background-color: blue;
   color: white;
@@ -20,6 +20,23 @@
   height: 100px;
   width: 100px;
   float: left;
+}
+
+.moves {
+  background-color: red;
+  height: 400px;
+}
+
+.x-moves-left {
+  border: 1px dotted green;
+  height: 100px;
+  margin: 20px;
+}
+
+.o-moves-left {
+  border: 1px dotted green;
+  height: 100px;
+  margin: 20px;
 }
 
 .mid-left, .bottom-left {
