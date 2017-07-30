@@ -1,8 +1,3 @@
-h2 {
-  border: 1px dotted green;
-  text-align: center;
-}
-
 .game-side {
   background-color: orange;
   height: 400px;
@@ -11,6 +6,8 @@ h2 {
 .game-board {
   margin: 40px 0 0 40px;
   position: relative;
+  border: 3px dotted green;
+  overflow: auto;
 }
 
 .game-board-square {
