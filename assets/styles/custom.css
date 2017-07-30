@@ -4,7 +4,8 @@
 }
 
 .game-board {
-  margin: 0 auto;
+  margin: 40px 0 0 40px;
+  position: relative;
 }
 
 .moves {
@@ -15,13 +16,28 @@
 .game-board-square {
   background-color: blue;
   color: white;
-  height: 100%;
-  /*text-align: center;
-  height: 50px;
-  width: 50px;
-  float: left;*/
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  float: left;
 }
 
-.row {
-  height: 100px !important;
+.mid-left, .bottom-left {
+  clear: left;
+}
+/* SETS THE BOARD LINES */
+.top-right, .mid-right, .bottom-right {
+  border-left: 3px solid black;
+}
+
+.top-left, .mid-left, .bottom-left {
+  border-right: 3px solid black;
+}
+
+.top-left, .top-center, .top-right {
+  border-bottom: 3px solid black;
+}
+
+.bottom-left, .bottom-center, .bottom-right {
+  border-top: 3px solid black;
 }
