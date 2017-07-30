@@ -4,7 +4,8 @@
 }
 
 .game-board {
-  margin: 40px 0 0 40px;
+  margin: 20px auto;
+  padding: 20px;
   position: relative;
   border: 3px dotted green;
   overflow: auto;
@@ -19,7 +20,12 @@
   float: left;
 }
 
+.mid-left, .bottom-left {
+  clear: left;
+}
+
 .moves {
+  padding: 30px;
   background-color: red;
   height: 400px;
 }
@@ -36,9 +42,6 @@
   margin: 20px;
 }
 
-.mid-left, .bottom-left {
-  clear: left;
-}
 /* SETS THE BOARD LINES */
 .top-right, .mid-right, .bottom-right {
   border-left: 3px solid black;
@@ -54,4 +57,9 @@
 
 .bottom-left, .bottom-center, .bottom-right {
   border-top: 3px solid black;
+}
+
+.acct-buttons {
+  padding-left: 0;
+  margin-left: 0;
 }

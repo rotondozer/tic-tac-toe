@@ -15,7 +15,7 @@
       <header>
         <!-- This header needs to be copied into other pages -->
         <nav class='navbar navbar-inverse navbar-static-top'>
-          <div class='container'>
+          <div class='container-fluid'>
             <div class='navbar-header'>
               <a href='index.html' class='navbar-brand'>TIC-TAC-TOE</a>
               <button type='button' class='btn btn-default navbar-toggle' data-toggle='collapse' data-target='#bs-button-toggle' aria-pressed='false' autocomplete='off'>
@@ -27,10 +27,16 @@
             </div>
 
             <div class='collapse navbar-collapse' id='bs-button-toggle'>
-              <ul class='nav navbar-nav navbar-right '>
-                <li><a href='bands.html'>ONE</a></li>
-                <li><a href='shows.html'>TWO</a></li>
-                <li><a href='venues.html'>THREE</a></li>
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Username">
+                  <input type="text" class="form-control" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-default">Login</button>
+              </form>
+              <ul class='nav navbar-nav navbar-right acct-buttons'>
+                <li><a href='######'>Sign Up</a></li>
+                <li><a href='######'>My Account</a></li>
               </ul>
             </div>
 
