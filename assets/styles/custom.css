@@ -58,8 +58,3 @@
 .bottom-left, .bottom-center, .bottom-right {
   border-top: 3px solid black;
 }
-
-.acct-buttons {
-  padding-left: 0;
-  margin-left: 0;
-}
