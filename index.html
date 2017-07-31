@@ -35,7 +35,11 @@
                 <button type="submit" class="btn btn-default">Login</button>
               </form>
               <ul class='nav navbar-nav navbar-right'>
-                <li><a href='######'>Sign Up</a></li>
+                <!-- TODO: data-toggle: modal to make popup for sign in stuff -->
+                <li>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  name="button">BUTTON</button>
+                </li>
                 <li><a href='######'>My Account</a></li>
               </ul>
             </div>
@@ -52,7 +56,7 @@
 
                 <div class="game-board-square top-left">
                   <p>top-left</p>
-                  <img src='images/hypnotoad.jpg' alt="" class='game-piece'>
+                  <img src='images/hypnotoad.jpg' alt="" class='game-piece' id="hypnotoad">
                 </div>
                 <div class="game-board-square top-center">
                   <p>top-center</p>
@@ -61,9 +65,6 @@
                 <div class="game-board-square top-right">
                   <p>top-right</p>
                 </div>
-
-
-
 
                 <div class="game-board-square mid-left">
                   <p>mid-left</p>
@@ -74,8 +75,6 @@
                 <div class="game-board-square mid-right">
                   <p>mid-right</p>
                 </div>
-
-
 
                 <div class="game-board-square bottom-left">
                   <p>bottom-left</p>
@@ -107,5 +106,34 @@
           </div> <!-- END OF MOVES SIDE -->
         </div>
       </div>
+
     </body>
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create An Account!</h5>
+            <button type="button" class="close" data-dismiss="modal" name="button">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" name="" placeholder="Username"><br>
+                <label for="">Password</label>
+                <input type="text" name="" placeholder="Password"><br>
+                <label for="">Confirm Password</label>
+                <input type="text" name="" placeholder="Confirm Password"><br>
+                <button type="button" class="btn btn-primary" name="button">Sign Up</button>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            footer
+          </div>
+        </div>
+      </div>
+    </div>
 </html>
