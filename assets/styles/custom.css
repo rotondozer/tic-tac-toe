@@ -38,6 +38,11 @@
   text-align: center;
 }
 
+.unavailable {
+  /*mixin for shading background?*/
+  background-color: red;
+}
+
 .hypno-moves-left {
   border: 1px dotted green;
   height: 100px;

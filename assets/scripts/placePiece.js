@@ -1,19 +1,5 @@
 'use strict'
-
-const toads = [
-  {
-    name: 'hypnotoad',
-    active: false,
-    src: 'hypnotoad.jpg',
-    moves: 5
-  },
-  {
-    name: 'neematoad',
-    active: true,
-    src: 'neematoad.jpg',
-    moves: 4
-  }
-]
+const toads = require('./toads.js')
 // callback function?
 const placePiece = $('.game-board-square').on('click', function () {
   // ensure square is available
@@ -31,8 +17,5 @@ const placePiece = $('.game-board-square').on('click', function () {
     $(this).addClass('unavailable')
   }
 })
-// $('.' + toads[i].name + '-moves-left:nth-child(2)').innerHTML('SELECTED')
-module.exports = {
-  toads,
-  placePiece
-}
+
+module.exports = placePiece
