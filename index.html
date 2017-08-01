@@ -13,7 +13,6 @@
     </head>
     <body>
       <header>
-        <!-- This header needs to be copied into other pages -->
         <nav class='navbar navbar-inverse navbar-static-top'>
           <div class='container-fluid'>
             <div class='navbar-header'>
@@ -37,10 +36,10 @@
               <ul class='nav navbar-nav navbar-right'>
                 <!-- TODO: data-toggle: modal to make popup for sign in stuff -->
                 <li>
-                  <a type="button" data-toggle="modal" data-target="#myModal" name="button">Sign Up</a>
+                  <a type="button" data-toggle="modal" data-target="#signUp">Sign Up</a>
                 </li>
                 <li>
-                  <a type="button" data-toggle="modal" data-target="#myModal" name="button">My Account</a>
+                  <a type="button" data-toggle="modal" data-target="#myAcct">My Account</a>
                 </li>
               </ul>
             </div>
@@ -54,14 +53,14 @@
         <div class="row">
           <div class="col-sm-8 game-side">
             <div class='game-board'>
-
-                <div class="game-board-square top-left">
+              <!-- TODO: create new-game button -->
+                <div class="game-board-square top-left unavailable">
                   <p>top-left</p>
-                  <img src='images/hypnotoad.jpg' alt="" class='game-piece' id="hypnotoad">
+                  <img src='images/hypnotoad.jpg' alt="###" class='game-piece'>
                 </div>
                 <div class="game-board-square top-center">
                   <p>top-center</p>
-                  <img src="images/neematoad.jpg" alt="" class="game-piece">
+                  <img src="images/neematoad.jpg" alt="###" class="game-piece">
                 </div>
                 <div class="game-board-square top-right">
                   <p>top-right</p>
@@ -93,12 +92,12 @@
               <div class="panel-heading">Moves Remaining</div>
               <div class="panel-body">
 
-              <div class="panel panel-success x-moves-left">
+              <div class="panel panel-success hypnotoad-moves-left">
                 <div class="panel-heading">HypnoToad</div>
-                <div class="panel-body">5</div>
+                <div class="panel-body" id="tmp">5</div>
               </div>
 
-              <div class="panel panel-danger o-moves-left">
+              <div class="panel panel-danger neematoad-moves-left">
                 <div class="panel-heading">NeemaToad</div>
                 <div class="panel-body">4</div>
               </div>
@@ -110,7 +109,7 @@
 
     </body>
 <!-- Sign Up Modal -->
-<div class="modal fade" id="myModal">
+    <div class="modal fade" id="signUp">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -137,4 +136,33 @@
         </div>
       </div>
     </div>
+<!-- My Account -->
+    <div class="modal fade" id="myAcct">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">My Account</h5>
+            <button type="button" class="close" data-dismiss="modal" name="button">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" name="" placeholder="Username"><br>
+                <label for="">Password</label>
+                <input type="text" name="" placeholder="Password"><br>
+                <label for="">Confirm Password</label>
+                <input type="text" name="" placeholder="Confirm Password"><br>
+                <button type="button" class="btn btn-primary" name="button">Sign Up</button>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            footer
+          </div>
+        </div>
+      </div>
+    </div>
+
 </html>
