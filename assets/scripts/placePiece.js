@@ -1,26 +1,28 @@
 'use strict'
 const toads = require('./toads.js')
 const changeToads = require('./changeToads')
-const assignCoordinate = require('./assignCoordinate')
+// const assignCoordinate = require('./assignCoordinate')
 // callback function?
 const placePiece = $('.game-board-square').on('click', function () {
   // ensure square is available
   if (!($(this).hasClass('unavailable'))) {
-    for (let i = 0; i < toads.length; i++) {
+    for (let i = 0; i < 2; i++) {
       // check active player
       if (toads[i].active) {
         // assign appropriate piece
         $(this).html('<img src="images/' + toads[i].src + '" alt="" class="game-piece">')
         // reduce moves left by one
         toads[i].moves -= 1
+        // assign move coordinates
+        toads[i].placements.push($(this).index())
+        alert(toads[i].name + toads[i].placements)
       }
     }
     // make square unavailable
     $(this).addClass('unavailable')
+    // change players
     changeToads()
   }
-  alert($(this).index())
-  // call assignCoordinate()
 })
 
 module.exports = placePiece
