@@ -1,6 +1,7 @@
 'use strict'
 const toads = require('./toads.js')
 const changeToads = require('./changeToads')
+const assignCoordinate = require('./assignCoordinate')
 // callback function?
 const placePiece = $('.game-board-square').on('click', function () {
   // ensure square is available
@@ -18,6 +19,8 @@ const placePiece = $('.game-board-square').on('click', function () {
     $(this).addClass('unavailable')
     changeToads()
   }
+  alert($(this).index())
+  // call assignCoordinate()
 })
 
 module.exports = placePiece
