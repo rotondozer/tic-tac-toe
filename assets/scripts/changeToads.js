@@ -9,6 +9,5 @@ const changeToads = function () {
     toads[i].active = !toads[i].active
   }
 }
-console.log(toads)
 
 module.exports = changeToads

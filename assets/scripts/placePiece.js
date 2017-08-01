@@ -1,5 +1,6 @@
 'use strict'
 const toads = require('./toads.js')
+const changeToads = require('./changeToads')
 // callback function?
 const placePiece = $('.game-board-square').on('click', function () {
   // ensure square is available
@@ -15,6 +16,7 @@ const placePiece = $('.game-board-square').on('click', function () {
     }
     // make square unavailable
     $(this).addClass('unavailable')
+    changeToads()
   }
 })
 
