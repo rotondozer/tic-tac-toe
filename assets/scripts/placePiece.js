@@ -1,7 +1,7 @@
 'use strict'
 const toads = require('./toads.js')
 const changeToads = require('./changeToads')
-const checkWin = require('./checkWin')
+const winLogic = require('./winLogic')
 
 let movesLeft = 9
 // callback function?
@@ -20,7 +20,7 @@ const placePiece = $('.game-board-square').on('click', function () {
         // first available win condition(?)
         if (movesLeft < 5) {
           alert('win possible')
-          checkWin.winCondition(toads[i].placements)
+          winLogic.checkWin(toads[i].placements, winLogic.winConditions)
         }
       }
     } // END for loop
