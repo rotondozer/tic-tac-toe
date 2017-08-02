@@ -1,12 +1,16 @@
 'use strict'
 
 const placePiece = require('./placePiece')
+const toads = require('./toads')
 
 const newGame = $('#newGame').on('click', function (event) {
   event.preventDefault()
-  // basically undo placePiece
   placePiece.movesLeft = 9
-  alert(placePiece.movesLeft)
+  $('.game-board-square').removeClass('unavailable').html('')
+  toads[0].placements = []
+  toads[0].active = false
+  toads[1].placements = []
+  toads[1].active = true
 })
 
 module.exports = {
