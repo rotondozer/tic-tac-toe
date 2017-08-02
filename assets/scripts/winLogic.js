@@ -1,5 +1,7 @@
 'use strict'
 
+const updateWins = require('./updateWins')
+
 const winConditions = [
   [0, 1, 2],
   [0, 3, 6],
@@ -25,11 +27,13 @@ const compareArrays = function (array, array2d) {
 }
 
 const checkWin = function (toadParam, callback) {
-  toadParam.sort()
-  for (let i = 0; i < toadParam.length; i++) {
+  toadParam.placements.sort()
+  for (let i = 0; i < toadParam.placements.length; i++) {
     for (let j = 0; j < winConditions.length; j++) {
-      if (toadParam[i] === winConditions[j][0]) {
-        callback(toadParam, winConditions[j])
+      if (toadParam.placements[i] === winConditions[j][0]) {
+        if (callback(toadParam.placements, winConditions[j])) {
+          updateWins(toadParam)
+        }
       }
     }
   }
