@@ -2,6 +2,7 @@
 const toads = require('./toads.js')
 const changeToads = require('./changeToads')
 const winLogic = require('./winLogic')
+const updateWins = require('./updateWins')
 
 let movesLeft = 9
 // callback function?
@@ -20,6 +21,7 @@ const placePiece = $('.game-board-square').on('click', function () {
         // first available win condition(?)
         if (movesLeft < 5) {
           winLogic.checkWin(toads[i].placements, winLogic.compareArrays)
+          updateWins(toads[i])
         }
       }
     } // END for loop
