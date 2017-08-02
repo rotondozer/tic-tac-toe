@@ -1,7 +1,6 @@
 'use strict'
 
 const updateWins = require('./updateWins')
-const newGame = require('./newGame')
 
 const winConditions = [
   [0, 1, 2],
@@ -32,8 +31,7 @@ const checkWin = function (toadParam, callback) {
     for (let j = 0; j < winConditions.length; j++) {
       if (toadParam.placements[i] === winConditions[j][0]) {
         if (callback(toadParam.placements, winConditions[j])) {
-          // replace this alert with game reset function
-          // alert(toadParam.name + ' WINS!')
+          $('#' + toadParam.name + 'Modal').modal('show')
           updateWins(toadParam)
           $('.game-board-square').addClass('unavailable')
         }
