@@ -19,8 +19,7 @@ const placePiece = $('.game-board-square').on('click', function () {
         toads[i].placements.push($(this).index())
         // first available win condition(?)
         if (movesLeft < 5) {
-          alert('win possible')
-          winLogic.checkWin(toads[i].placements, winLogic.winConditions)
+          winLogic.checkWin(toads[i].placements, winLogic.compareArrays)
         }
       }
     } // END for loop

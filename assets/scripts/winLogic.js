@@ -1,46 +1,50 @@
 'use strict'
 
-const winConditions = function (param) {
-  return param % 1 === 0 || param % 2 === 0 || param % 3 === 0 || param % 4 === 0
+const winConditions = [
+  [0, 1, 2],
+  [0, 3, 6],
+  [0, 4, 8],
+  [1, 4, 7],
+  [2, 4, 6],
+  [2, 5, 8],
+  [3, 4, 5],
+  [6, 7, 8]
+]
+
+const compareArrays = function (array, array2d) {
+  console.log('i\'ve been called on ' + array + ' and ' + array2d)
+  console.log(array2d[1])
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === array2d[1]) {
+      console.log('made it')
+      for (let j = 0; j < array.length; j++) {
+        if (array[j] === array2d[2]) {
+          console.log('WINNER!')
+          alert('WINNER')
+          return true
+        }
+      }
+    }
+  }
 }
 
-const checkWin = function (toadArr, callback) {
-  // *** FOR TESTING ***
-  alert(toadArr)
-  for (let i = 0; i < toadArr.length; i++) {
-    // if all indexes % === 0
-    if (callback(toadArr[i])) {
-      alert('win detected')
-      return true
-    } else {
-      return false
+const checkWin = function (toadParam, callback) {
+  // move sort() out after debugging?
+  toadParam.sort()
+  console.log(toadParam)
+  for (let i = 0; i < toadParam.length; i++) {
+    for (let j = 0; j < winConditions.length; j++) {
+      if (toadParam[i] === winConditions[j][0]) {
+        console.log(toadParam[i])
+        console.log(winConditions[j])
+        callback(toadParam, winConditions[j])
+      }
     }
   }
 }
 
 module.exports = {
   checkWin,
-  winConditions
+  winConditions,
+  compareArrays
 }
-
-// Write a function that returns `true`
-// if an only if invoking the callback
-// for every element returns `true`
-// for one and only one element
-// you may use any feature of JavaScript
-// to solve this problem
-/*
-const hasOne = function (array, callback) {
-  const arrOfOne = []
-  for (let i = 0; i < array.length; i++) {
-    if (callback(array[i])) {
-      arrOfOne.push(array[i])
-    }
-  }
-  if (arrOfOne.length === 1) {
-    return true
-  } else {
-    return false
-  }
-}
-*/
