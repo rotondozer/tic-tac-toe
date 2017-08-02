@@ -1,5 +1,11 @@
+body {
+  background-color: #0a5330 !important;
+
+
+
+}
+
 .game-side {
-  background-color: orange;
   height: 400px;
 }
 
@@ -7,16 +13,13 @@
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  border: 3px dotted green;
   overflow: auto;
 }
 
 .game-board-square {
-  background-color: blue;
-  color: white;
   text-align: center;
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   float: left;
 }
 
@@ -31,16 +34,20 @@
   clear: left;
 }
 
-.moves {
+.right-side {
   padding: 30px;
-  background-color: red;
   height: 400px;
   text-align: center;
 }
 
+.wins {
+  /*padding: 10px;*/
+}
+
 .unavailable {
   /*mixin for shading background?*/
-  background-color: red;
+  background-image: url("../../images/scales_background.jpg") !important;
+  background-size: contain;
 }
 
 .hypno-moves-left {
@@ -57,17 +64,33 @@
 
 /* SETS THE BOARD LINES */
 .top-right, .mid-right, .bottom-right {
-  border-left: 3px solid black;
+  border-left: 5px solid black;
 }
 
 .top-left, .mid-left, .bottom-left {
-  border-right: 3px solid black;
+  border-right: 5px solid black;
 }
 
 .top-left, .top-center, .top-right {
-  border-bottom: 3px solid black;
+  border-bottom: 5px solid black;
 }
 
 .bottom-left, .bottom-center, .bottom-right {
-  border-top: 3px solid black;
+  border-top: 5px solid black;
+}
+
+.top-left {
+  border-radius: 7px 0 0 0;
+}
+
+.top-right {
+  border-radius: 0 7px 0 0;
+}
+
+.bottom-right {
+  border-radius: 0 0 7px 0;
+}
+
+.bottom-left {
+  border-radius: 0 0 0 7px;
 }
