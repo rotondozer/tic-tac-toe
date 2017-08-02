@@ -2,7 +2,6 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-require('./placePiece')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -13,3 +12,5 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 require('./example')
+require('./placePiece')
+require('./newGame')
