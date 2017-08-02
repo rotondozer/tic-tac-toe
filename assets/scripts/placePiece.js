@@ -17,7 +17,7 @@ const placePiece = $('.game-board-square').on('click', function () {
         movesLeft -= 1
         // assign move coordinates
         toads[i].placements.push($(this).index())
-        // first available win condition(?)
+        // check win on active player
         if (movesLeft < 5) {
           winLogic.checkWin(toads[i], winLogic.compareArrays)
         }
@@ -29,7 +29,6 @@ const placePiece = $('.game-board-square').on('click', function () {
     changeToads()
   } // END if conditional
 })
-
 module.exports = {
   placePiece,
   movesLeft
