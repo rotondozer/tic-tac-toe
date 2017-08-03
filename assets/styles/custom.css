@@ -2,6 +2,10 @@ body {
   background-color: #0a5330 !important;
 }
 
+h5 {
+  text-align: center;
+}
+
 .game-side {
   height: 400px;
 }
@@ -92,6 +96,9 @@ body {
   border-radius: 0 0 0 7px;
 }
 
-#id {
-  color: orange !important;
+.hypno-gif {
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
