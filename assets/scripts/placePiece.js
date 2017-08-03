@@ -12,7 +12,7 @@ const placePiece = $('.game-board-square').on('click', function () {
       // check active player
       if (toads[i].active) {
         // assign appropriate piece
-        $(this).html('<img src="images/' + toads[i].src + '" alt="" class="game-piece">')
+        $(this).html('<img src="https://raw.githubusercontent.com/rotondozer/tic-tac-toe/master/images/' + toads[i].src + '" alt="toad" class="game-piece">')
         // reduce moves left by one
         movesLeft -= 1
         // assign move coordinates
