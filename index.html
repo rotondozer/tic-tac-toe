@@ -52,7 +52,7 @@
         <div class="row">
           <div class="col-sm-8 game-side">
             <div class='game-board'>
-              <!-- TODO: create new-game button -->
+
               <div class="game-board-square top-left"></div>
               <div class="game-board-square top-center"></div>
               <div class="game-board-square top-right"></div>
@@ -127,14 +127,17 @@
             <form id="change-password">
               <div class="form-group">
                 <label for="">Change Password</label>
-                <label for="">Password</label>
-                <input type="password" name="credentials[password]" placeholder="Password"><br>
+                <label for="">Old Password</label>
+                <input type="password" name="passwords[old]" placeholder="Old Password"><br>
                 <label for="">Confirm Password</label>
-                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
-                <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
+                <input type="password" name="passwords[new]" placeholder="New Password"><br>
+                <button type="submit" class="btn btn-primary" name="submit">Change Password</button>
               </div>
             </form>
-              <button type="submit" id="sign-out">Sign Out</button>
+            <form id="sign-out">
+              <button type="submit">Sign Out</button>
+            </form>
+
           </div>
           <div class="modal-footer">
             footer

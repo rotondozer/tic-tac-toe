@@ -7,7 +7,7 @@ const signInSuccess = (data) => {
   app.user = data.user
   console.log(app)
   console.log('sign in success!')
-  $('#signedInUser').text('SIGNED IN')
+  $('#signedInUser').text(data.user.email)
   $('input').val('')
 }
 
@@ -16,10 +16,20 @@ const signOutSuccess = () => {
   app.user = null
   console.log(app)
   console.log('signed out')
+  $('#signedInUser').text('')
+  $('#myAcct').modal('hide')
 }
 
 const changePasswordSuccess = () => {
+  $('input').val('')
+  $('#myAcct').modal('hide')
   console.log('Password Successfully Changed.')
+}
+
+// I made this
+const signUpSuccess = (data) => {
+  console.log(data)
+  $('#signUp').modal('hide')
 }
 
 const success = (data) => {
@@ -35,5 +45,6 @@ module.exports = {
   success,
   signInSuccess,
   signOutSuccess,
-  changePasswordSuccess
+  changePasswordSuccess,
+  signUpSuccess
 }
