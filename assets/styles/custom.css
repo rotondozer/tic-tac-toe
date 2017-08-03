@@ -91,3 +91,7 @@ body {
 .bottom-left {
   border-radius: 0 0 0 7px;
 }
+
+#id {
+  color: orange !important;
+}
