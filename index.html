@@ -103,7 +103,8 @@
                 <label for="">Username</label>
                 <input type="text" name="credentials[email]" value="" placeholder="Email"><br>
                 <label for="">Password</label>
-                <input type="password" name="credentials[password]" value="" placeholder="Password"><br>
+                <input type="password" name="credentials[password]" value="" placeholder="Password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
                 <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
               </div>
 
@@ -124,17 +125,17 @@
             <button type="button" class="close" data-dismiss="modal" name="button">&times;</button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="change-password">
               <div class="form-group">
                 <label for="">Change Password</label>
                 <label for="">Password</label>
-                <input type="password" name="" placeholder="Password"><br>
+                <input type="password" name="credentials[password]" placeholder="Password"><br>
                 <label for="">Confirm Password</label>
-                <input type="password" name="" placeholder="Confirm Password"><br>
-                <button type="button" class="btn btn-primary" name="button">Sign Up</button>
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"><br>
+                <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
               </div>
             </form>
-              <button>Sign Out</button>
+              <button type="submit" id="sign-out">Sign Out</button>
           </div>
           <div class="modal-footer">
             footer
