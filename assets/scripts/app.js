@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = {
-  host: 'https://ga-wdi-boston.herokuapp.com'
+  host: 'http://tic-tac-toe.wdibos.com/'
 }
