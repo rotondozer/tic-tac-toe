@@ -26,12 +26,13 @@
             </div>
 
             <div class='collapse navbar-collapse' id='bs-button-toggle'>
-              <form class="navbar-form navbar-left" role="search">
+              <form class="navbar-form navbar-left"  id="sign-in" role="search">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Username">
-                  <input type="text" class="form-control" placeholder="Password">
+                  <input type="text" class="form-control" name="credentials[email]" value="" placeholder="Email">
+                  <input type="password" class="form-control" name="credentials[password]" value="" placeholder="Password">
+                  <button type="submit" class="btn btn-default">Login</button>
                 </div>
-                <button type="submit" class="btn btn-default">Login</button>
+
               </form>
               <ul class='nav navbar-nav navbar-right'>
                 <li>
@@ -97,15 +98,13 @@
             <button type="button" class="close" data-dismiss="modal" name="button">&times;</button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="sign-up">
               <div class="form-group">
                 <label for="">Username</label>
-                <input type="text" name="" placeholder="Username"><br>
+                <input type="text" name="credentials[email]" value="" placeholder="Email"><br>
                 <label for="">Password</label>
-                <input type="text" name="" placeholder="Password"><br>
-                <label for="">Confirm Password</label>
-                <input type="text" name="" placeholder="Confirm Password"><br>
-                <button type="button" class="btn btn-primary" name="button">Sign Up</button>
+                <input type="password" name="credentials[password]" value="" placeholder="Password"><br>
+                <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
               </div>
 
             </form>
