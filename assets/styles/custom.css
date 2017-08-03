@@ -102,3 +102,10 @@ h5 {
   margin: 0 auto;
   text-align: center;
 }
+
+@media (max-width: 425px) {
+  .game-board-square {
+    height: 75px;
+    width: 75px;
+  }
+}
