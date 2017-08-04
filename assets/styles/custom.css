@@ -2,8 +2,9 @@ body {
   background-color: #0a5330 !important;
 }
 
-h5 {
+h3 {
   text-align: center;
+  color: #dbd6ce !important;
 }
 
 .game-side {
@@ -108,4 +109,9 @@ h5 {
     height: 75px;
     width: 75px;
   }
+}
+
+.modal-header, .modal-footer {
+  background-image: url("../../images/scales_background.jpg") !important;
+  background-color: #e6dfe1;
 }
