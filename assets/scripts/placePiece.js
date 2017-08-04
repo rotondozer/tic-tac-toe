@@ -19,7 +19,11 @@ const placePiece = $('.game-board-square').on('click', function () {
         toads[i].placements.push($(this).index())
         // check win on active player
         if (movesLeft < 5) {
-          winLogic.checkWin(toads[i], winLogic.compareArrays)
+          if (winLogic.checkWin(toads[i], winLogic.compareArrays)) {
+            return
+          } else if (movesLeft === 0) {
+            $('#draw').modal('show')
+          }
         }
       }
     } // END for loop
@@ -28,9 +32,6 @@ const placePiece = $('.game-board-square').on('click', function () {
     // change players
     changeToads()
   } // END if conditional
-  if (movesLeft === 0) {
-    $('#draw').modal('show')
-  }
 })
 
 const newGame = function () {

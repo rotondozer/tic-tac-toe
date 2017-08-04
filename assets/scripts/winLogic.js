@@ -34,6 +34,7 @@ const checkWin = function (toadParam, callback) {
           $('#' + toadParam.name + 'Modal').modal('show')
           updateWins(toadParam)
           $('.game-board-square').addClass('unavailable')
+          return true
         }
       }
     }
