@@ -28,8 +28,26 @@ const placePiece = $('.game-board-square').on('click', function () {
     // change players
     changeToads()
   } // END if conditional
+  if (movesLeft < 1) {
+    $('#draw').modal('show')
+  }
 })
+
+const newGame = function () {
+  movesLeft = 9
+  $('.game-board-square').removeClass('unavailable').html('')
+  toads[0].placements = []
+  toads[0].active = false
+  toads[1].placements = []
+  toads[1].active = true
+}
+
+$('#newGame').on('click', function (event) {
+  event.preventDefault()
+  newGame()
+})
+
 module.exports = {
   placePiece,
-  movesLeft
+  newGame
 }
