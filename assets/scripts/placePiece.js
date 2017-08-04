@@ -28,7 +28,7 @@ const placePiece = $('.game-board-square').on('click', function () {
     // change players
     changeToads()
   } // END if conditional
-  if (movesLeft < 1) {
+  if (movesLeft === 0) {
     $('#draw').modal('show')
   }
 })
