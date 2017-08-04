@@ -43,7 +43,7 @@ h3 {
 }
 
 .wins {
-  /*padding: 10px;*/
+  background-image: url("../../images/scales_background.jpg") !important;
 }
 
 .unavailable {
