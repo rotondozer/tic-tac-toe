@@ -6,7 +6,7 @@ const app = require('../app.js')
 const signInSuccess = (data) => {
   app.user = data.user
   console.log(app)
-  console.log('sign in success!')
+  // console.log('sign in success!')
   $('#signedInUser').text(data.user.email)
   $('input').val('')
 }
@@ -15,7 +15,7 @@ const signInSuccess = (data) => {
 const signOutSuccess = () => {
   app.user = null
   console.log(app)
-  console.log('signed out')
+  // console.log('signed out')
   $('#signedInUser').text('')
   $('#myAcct').modal('hide')
 }
@@ -23,7 +23,7 @@ const signOutSuccess = () => {
 const changePasswordSuccess = () => {
   $('input').val('')
   $('#myAcct').modal('hide')
-  console.log('Password Successfully Changed.')
+  // console.log('Password Successfully Changed.')
 }
 
 // I made this
