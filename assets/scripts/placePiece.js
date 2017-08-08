@@ -35,6 +35,7 @@ const placePiece = $('.game-board-square').on('click', function () {
 })
 
 const newGame = function () {
+  $('.game-board').show()
   movesLeft = 9
   $('.game-board-square').removeClass('unavailable').html('')
   toads[0].placements = []
@@ -42,11 +43,6 @@ const newGame = function () {
   toads[1].placements = []
   toads[1].active = true
 }
-
-$('#newGame').on('click', function (event) {
-  event.preventDefault()
-  newGame()
-})
 
 module.exports = {
   placePiece,

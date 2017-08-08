@@ -44,10 +44,22 @@ const changePassword = function (data) {
   })
 }
 
+const createGame = function (data) {
+  return $.ajax({
+    method: 'POST',
+    url: app.host + '/games',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  createGame,
   getFormFields
 }

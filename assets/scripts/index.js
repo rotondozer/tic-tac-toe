@@ -5,6 +5,7 @@ const config = require('./config')
 const authEvents = require('./auth/events.js')
 
 $(() => {
+  $('.game-board').hide()
   setAPIOrigin(location, config)
   authEvents.addHandlers()
 })

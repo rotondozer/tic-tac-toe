@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const placePiece = require('../placePiece')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -36,11 +37,22 @@ const onChangePassword = function (event) {
     .fail(ui.fail)
 }
 
+const onCreateGame = function (event) {
+  event.preventDefault()
+  placePiece.newGame()
+  alert('made it this far')
+  // HOW TO GET THE DATA
+  api.createGame()
+    .then(ui.gamePostSuccess)
+    .catch(ui.fail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#newGame').on('click', onCreateGame)
 }
 
 module.exports = {

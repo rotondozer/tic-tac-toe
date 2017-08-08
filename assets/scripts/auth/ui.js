@@ -9,6 +9,7 @@ const signInSuccess = (data) => {
   // console.log('sign in success!')
   $('#signedInUser').text(data.user.email)
   $('input').val('')
+  $('#log-in-to-play').hide()
 }
 
 // remove me before code-along
@@ -17,6 +18,8 @@ const signOutSuccess = () => {
   console.log(app)
   // console.log('signed out')
   $('#signedInUser').text('')
+  $('.game-board').hide()
+  $('#log-in-to-play').show()
   $('#myAcct').modal('hide')
 }
 
@@ -40,11 +43,16 @@ const failure = (error) => {
   console.error(error)
 }
 
+const gamePostSuccess = () => {
+  console.log('well, ya did something')
+}
+
 module.exports = {
   failure,
   success,
   signInSuccess,
   signOutSuccess,
   changePasswordSuccess,
+  gamePostSuccess,
   signUpSuccess
 }
