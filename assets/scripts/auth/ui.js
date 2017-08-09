@@ -45,6 +45,7 @@ const failure = (error) => {
 
 const gamePostSuccess = () => {
   console.log('well, ya did something')
+  console.log(app.games)
 }
 
 module.exports = {

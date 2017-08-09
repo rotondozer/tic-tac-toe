@@ -35,7 +35,6 @@ const placePiece = $('.game-board-square').on('click', function () {
 })
 
 const newGame = function () {
-  $('.game-board').show()
   movesLeft = 9
   $('.game-board-square').removeClass('unavailable').html('')
   toads[0].placements = []

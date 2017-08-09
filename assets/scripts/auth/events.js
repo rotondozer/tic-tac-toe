@@ -15,6 +15,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
+  $('.game-board').show()
   const data = getFormFields(event.target)
   api.signIn(data)
     .done(ui.signInSuccess)
@@ -47,12 +48,18 @@ const onCreateGame = function (event) {
     .catch(ui.fail)
 }
 
+const onMakeMove = function (event) {
+  event.preventDefault()
+  alert('placePiece')
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#newGame').on('click', onCreateGame)
+  $('.game-board-square').on('click', onMakeMove)
 }
 
 module.exports = {
