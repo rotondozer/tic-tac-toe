@@ -4,6 +4,7 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const placePiece = require('../placePiece')
+// const app = require('../app')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -50,7 +51,11 @@ const onCreateGame = function (event) {
 
 const onMakeMove = function (event) {
   event.preventDefault()
-  alert('placePiece')
+  alert('Place Piece')
+  const data = placePiece.gameValues
+  api.makeMove(data.i, data.v, data.isOver)
+    .then(ui.makeMoveSuccess)
+    .catch(ui.fail)
 }
 
 const addHandlers = () => {
@@ -63,5 +68,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onMakeMove
 }

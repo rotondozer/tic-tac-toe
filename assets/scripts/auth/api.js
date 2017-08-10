@@ -44,16 +44,44 @@ const changePassword = function (data) {
   })
 }
 
-const createGame = function (data) {
+const createGame = function () {
   return $.ajax({
+    // console.log(app.host.games)
     method: 'POST',
     url: app.host + '/games',
     headers: {
       Authorization: 'Token token=' + app.user.token
-    },
-    data: data
+    }
   })
 }
+
+const makeMove = function (index, value, over) {
+  return $.ajax({
+    method: 'PATCH',
+    url: app.host + '/games/' + app.game.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': value
+        },
+        'over': over
+      }
+    }
+  })
+}
+// const index = function () {
+//   return $.ajax({
+//     url: app.host + '/games',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token
+//     }
+//   })
+// }
 
 module.exports = {
   signUp,
@@ -61,5 +89,6 @@ module.exports = {
   signOut,
   changePassword,
   createGame,
+  makeMove,
   getFormFields
 }

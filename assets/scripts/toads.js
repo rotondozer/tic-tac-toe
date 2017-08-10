@@ -6,14 +6,16 @@ const toads = [
     active: false,
     src: 'hypnotoad.jpg',
     gamesWon: 0,
-    placements: []
+    placements: [],
+    value: 'o'
   },
   {
     name: 'neematoad',
     active: true,
     src: 'neematoad.jpg',
     gamesWon: 0,
-    placements: []
+    placements: [],
+    value: 'x'
   }
 ]
 

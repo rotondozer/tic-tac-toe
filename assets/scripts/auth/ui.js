@@ -45,7 +45,11 @@ const failure = (error) => {
 
 const gamePostSuccess = () => {
   console.log('well, ya did something')
-  console.log(app.games)
+  console.log(app.game)
+}
+
+const makeMoveSuccess = () => {
+  console.log('made a move')
 }
 
 module.exports = {
@@ -55,5 +59,6 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   gamePostSuccess,
+  makeMoveSuccess,
   signUpSuccess
 }
