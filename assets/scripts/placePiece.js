@@ -25,8 +25,8 @@ const placePiece = $('.game-board-square').on('click', function () {
         movesLeft -= 1
         // assign move coordinates
         toads[i].placements.push($(this).index())
-        gameValues.indexValue = $(this).index()
-        gameValues.playerValue = toads[i].value
+        gameValues.i = $(this).index()
+        gameValues.v = toads[i].value
         // check win on active player
         if (movesLeft < 5) {
           if (winLogic.checkWin(toads[i], winLogic.compareArrays)) {

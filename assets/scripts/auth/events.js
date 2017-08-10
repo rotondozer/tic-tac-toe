@@ -58,6 +58,8 @@ const onMakeMove = function (event) {
     .catch(ui.fail)
 }
 
+
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)

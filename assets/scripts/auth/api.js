@@ -58,7 +58,16 @@ const createGame = function () {
   })
 }
 
+// const retrieveGame = function () {
+//   return $.ajax({
+//     url: app.host + '/games',
+//   })
+// }
+
 const makeMove = function (index, value, over) {
+  console.log('index is ' + index)
+  console.log('value is ' + value)
+  console.log('over is ' + over)
   return $.ajax({
     method: 'PATCH',
     url: app.host + '/games/' + app.game.id,
