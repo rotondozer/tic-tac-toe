@@ -53,6 +53,11 @@ const makeMoveSuccess = () => {
   console.log('made a move')
 }
 
+const getGameSuccess = (data) => {
+  console.log('getting games?')
+  console.log(app.user)
+}
+
 module.exports = {
   failure,
   success,
@@ -61,5 +66,6 @@ module.exports = {
   changePasswordSuccess,
   gamePostSuccess,
   makeMoveSuccess,
-  signUpSuccess
+  signUpSuccess,
+  getGameSuccess
 }

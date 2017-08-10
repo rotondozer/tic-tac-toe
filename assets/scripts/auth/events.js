@@ -58,7 +58,13 @@ const onMakeMove = function (event) {
     .catch(ui.fail)
 }
 
-
+const onGetGames = function (event) {
+  event.preventDefault()
+  console.log('here')
+  api.retrieveGames()
+    .then(ui.getGameSuccess)
+    .catch(ui.fail)
+}
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
@@ -67,6 +73,7 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#newGame').on('click', onCreateGame)
   $('.game-board-square').on('click', onMakeMove)
+  $('#get-games').on('click', onGetGames)
 }
 
 module.exports = {

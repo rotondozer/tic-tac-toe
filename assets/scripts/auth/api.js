@@ -58,11 +58,16 @@ const createGame = function () {
   })
 }
 
-// const retrieveGame = function () {
-//   return $.ajax({
-//     url: app.host + '/games',
-//   })
-// }
+const retrieveGames = function () {
+  console.log(app.user.token)
+  return $.ajax({
+    method: 'GET',
+    url: app.host + '/games?over=false',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
 
 const makeMove = function (index, value, over) {
   console.log('index is ' + index)
@@ -102,5 +107,6 @@ module.exports = {
   changePassword,
   createGame,
   makeMove,
-  getFormFields
+  getFormFields,
+  retrieveGames
 }
