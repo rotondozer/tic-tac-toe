@@ -51,6 +51,9 @@ const createGame = function () {
     url: app.host + '/games',
     headers: {
       Authorization: 'Token token=' + app.user.token
+    },
+    success: function (response) {
+      console.log(response)
     }
   })
 }

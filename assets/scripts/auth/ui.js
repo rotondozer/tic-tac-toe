@@ -43,9 +43,10 @@ const failure = (error) => {
   console.error(error)
 }
 
-const gamePostSuccess = () => {
+const gamePostSuccess = (data) => {
   console.log('well, ya did something')
-  console.log(app.game)
+  app.game = data.game
+  app.game.id = data.game.id
 }
 
 const makeMoveSuccess = () => {
