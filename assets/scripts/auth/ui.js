@@ -55,11 +55,10 @@ const makeMoveSuccess = () => {
 
 const getGameSuccess = (data) => {
   console.log('getting games?')
-  console.log(app.user)
-  console.log(data)
+  console.log(data.games[0].id)
   $('#myAcct').modal('hide')
   $('#view-games-modal').modal('show')
-  $('#games-content').html('<div>data</div>')
+  $('#games-content').html('<div>' + data.games[0].id + '</div>')
 }
 
 module.exports = {
