@@ -16,7 +16,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  $('.game-board').show()
+
   const data = getFormFields(event.target)
   api.signIn(data)
     .done(ui.signInSuccess)
@@ -42,7 +42,7 @@ const onChangePassword = function (event) {
 const onCreateGame = function (event) {
   event.preventDefault()
   placePiece.newGame()
-  alert('made it this far')
+  $('.game-board').show()
   // HOW TO GET THE DATA
   api.createGame()
     .then(ui.gamePostSuccess)
