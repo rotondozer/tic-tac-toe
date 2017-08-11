@@ -55,12 +55,14 @@ const makeMoveSuccess = () => {
 
 const getGameSuccess = (data) => {
   console.log('getting games?')
-  console.log(data.games[0])
+  console.log(data.games)
   $('#myAcct').modal('hide')
   $('#view-games-modal').modal('show')
   // put this inside a for loop to loop through all games
-  $('#games-content').html('<div>Game ID:' + data.games[0].id + '</div>')
-  $('#games-content').append('<div>Game STATE:' + data.games[0].cells + '</div>')
+  for (let i = 0; i < data.games.length; i++) {
+    $('#games-content').append('<div>Game ID:' + data.games[i].id + '</div>')
+    $('#games-content').append('<div>Game STATE:' + data.games[i].cells + '</div>')
+  }
 }
 
 module.exports = {
