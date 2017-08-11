@@ -62,7 +62,7 @@ const retrieveGames = function () {
   console.log(app.user.token)
   return $.ajax({
     method: 'GET',
-    url: app.host + '/games?over=false',
+    url: app.host + '/games?over=true',
     headers: {
       Authorization: 'Token token=' + app.user.token
     }

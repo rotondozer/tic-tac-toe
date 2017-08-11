@@ -137,7 +137,7 @@
               <button type="submit" class="btn btn-danger">Sign Out</button>
             </form>
             <form id="get-games">
-              <button type="submit" class="btn btn-info">View Games</button>
+              <button type="submit" data-toggle="modal" data-target="view-games-modal" class="btn btn-info">View Games</button>
             </form>
 
           </div>
@@ -191,6 +191,23 @@
           </div>
           <div class="modal-body">
             <img src="https://media.giphy.com/media/rZZSuYLPitqRG/giphy.gif" alt="game over" class="hypno-gif"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- View Games Modal -->
+<!-- TODO: wire up this modal to the myAcct modal's 'view games' btn -->
+    <div class="modal fade" id="view-games-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">View Games</h3>
+          </div>
+          <div class="modal-body" id="games-content">
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
