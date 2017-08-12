@@ -45,6 +45,7 @@ const failure = (error) => {
 
 const gamePostSuccess = (data) => {
   console.log('well, ya did something')
+  $('.game-board').show()
   app.game = data.game
   app.game.id = data.game.id
 }

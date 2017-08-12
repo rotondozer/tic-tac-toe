@@ -42,7 +42,6 @@ const onChangePassword = function (event) {
 const onCreateGame = function (event) {
   event.preventDefault()
   placePiece.newGame()
-  $('.game-board').show()
   // HOW TO GET THE DATA
   api.createGame()
     .then(ui.gamePostSuccess)
