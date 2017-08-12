@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toad</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <nav class='navbar navbar-inverse navbar-static-top'>
+          <div class='container-fluid'>
+            <div class='navbar-header'>
+              <a href='index.html' class='navbar-brand'>TIC-TAC-TOAD</a>
+              <button type='button' class='btn btn-default navbar-toggle' data-toggle='collapse' data-target='#bs-button-toggle' aria-pressed='false' autocomplete='off'>
+                <span class='sr-only'>Toggle Navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+              </button>
+            </div>
+
+            <div class='collapse navbar-collapse' id='bs-button-toggle'>
+              <form class="navbar-form navbar-left"  id="sign-in" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="credentials[email]" value="" placeholder="Email">
+                  <input type="password" class="form-control" name="credentials[password]" value="" placeholder="Password">
+                  <button type="submit" class="btn btn-default">Login</button>
+                </div>
+
+              </form>
+              <ul class='nav navbar-nav navbar-right'>
+                <li><a id="signedInUser"></a></li>
+                <li>
+                  <a type="submit" data-toggle="modal" data-target="#signUp">Sign Up</a>
+                </li>
+                <li>
+                  <a type="submit" data-toggle="modal" data-target="#myAcct">My Account</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 game-side">
+            <h1 id="log-in-to-play">YOU MUST LOG IN TO PLAY</h1>
+            <div class='game-board'>
+
+              <div class="game-board-square top-left"></div>
+              <div class="game-board-square top-center"></div>
+              <div class="game-board-square top-right"></div>
+
+              <div class="game-board-square mid-left"></div>
+              <div class="game-board-square mid-center"></div>
+              <div class="game-board-square mid-right"></div>
+
+              <div class="game-board-square bottom-left"></div>
+              <div class="game-board-square bottom-center"></div>
+              <div class="game-board-square bottom-right"></div>
+            </div> <!-- END OF GAME BOARD -->
+          </div> <!-- END OF GAME SIDE -->
+          <div class="col-sm-4 right-side">
+            <div class="panel panel-default">
+              <div class="panel-heading wins"><h3>Games Won</h3></div>
+              <div class="panel-body">
+
+              <div class="panel panel-warning hypnotoad-wins">
+                <div class="panel-heading">HypnoToad</div>
+                <div class="panel-body" id="hypnotoad-wins">0</div>
+              </div>
+
+              <div class="panel panel-success neematoad-wins">
+                <div class="panel-heading">NeemaToad</div>
+                <div class="panel-body" id="neematoad-wins">0</div>
+              </div>
+              <button type="submit" class="btn btn-lg btn-block wins" id="newGame"><h3>New Game</h3></button>
+            </div> <!-- END OF MOVES PANEL BODY -->
+            </div> <!-- END OF OUTER MOVES PANEL -->
+          </div> <!-- END OF MOVES SIDE -->
+        </div>
+      </div>
+
+    </body>
+<!-- Sign Up Modal -->
+    <div class="modal fade" id="signUp">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Create An Account!</h3>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up">
+              <div class="form-group">
+                <label for="">Username</label>
+                <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control"><br>
+                <label for="">Password</label>
+                <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control">
+                <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control"><br>
+                <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- My Account Modal-->
+    <div class="modal fade" id="myAcct">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">My Account</h3>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+              <div class="form-group">
+                <h4 for="">Change Password</h4>
+                <label for="">Old Password</label>
+                <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control"><br>
+                <label for="">New Password</label>
+                <input type="password" name="passwords[new]" placeholder="New Password" class="form-control"><br>
+                <button type="submit" class="btn btn-primary" name="submit">Change Password</button>
+              </div>
+            </form>
+            <form id="sign-out">
+              <button type="submit" class="btn btn-danger">Sign Out</button>
+            </form>
+            <form id="get-games">
+              <button type="submit" data-toggle="modal" data-target="view-games-modal" class="btn btn-info">View Games</button>
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- hypnotoad Winner Modal-->
+    <div class="modal fade" id="hypnotoadModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">ALL HAIL HYPNOTOAD</h3>
+          </div>
+          <div class="modal-body">
+            <img src="https://media.giphy.com/media/rou0CTAp6Z8VW/giphy.gif" alt="hail hypnotaod" class="hypno-gif"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Neematoad Winner Modal-->
+    <div class="modal fade" id="neematoadModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">NEEMATOAD WINS</h3>
+          </div>
+          <div class="modal-body">
+            <img src="https://media.giphy.com/media/O3N85I35pVU52/giphy.gif" alt="game over" class="hypno-gif"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Draw Modal-->
+    <div class="modal fade" id="draw">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">DRAW</h3>
+          </div>
+          <div class="modal-body">
+            <img src="https://media.giphy.com/media/rZZSuYLPitqRG/giphy.gif" alt="game over" class="hypno-gif"/>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- View Games Modal -->
+<!-- TODO: wire up this modal to the myAcct modal's 'view games' btn -->
+    <div class="modal fade" id="view-games-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Completed Games</h3>
+          </div>
+          <div class="modal-body" id="games-content">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</html>
