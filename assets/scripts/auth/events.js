@@ -42,7 +42,6 @@ const onChangePassword = function (event) {
 const onCreateGame = function (event) {
   event.preventDefault()
   placePiece.newGame()
-  // HOW TO GET THE DATA
   api.createGame()
     .then(ui.gamePostSuccess)
     .catch(ui.fail)
@@ -58,7 +57,7 @@ const onMakeMove = function (event) {
 
 const onGetGames = function (event) {
   event.preventDefault()
-  console.log('here')
+  // console.log('here')
   api.retrieveGames()
     .then(ui.getGameSuccess)
     .catch(ui.fail)

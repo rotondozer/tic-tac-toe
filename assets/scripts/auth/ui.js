@@ -5,7 +5,7 @@ const app = require('../app.js')
 // remove me before code-along
 const signInSuccess = (data) => {
   app.user = data.user
-  console.log(app)
+  // console.log(app)
   // console.log('sign in success!')
   $('#signedInUser').text(data.user.email)
   $('input').val('')
@@ -15,7 +15,7 @@ const signInSuccess = (data) => {
 // remove me before code-along
 const signOutSuccess = () => {
   app.user = null
-  console.log(app)
+  // console.log(app)
   // console.log('signed out')
   $('#signedInUser').text('')
   $('.game-board').hide()
@@ -31,16 +31,16 @@ const changePasswordSuccess = () => {
 
 // I made this
 const signUpSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   $('#signUp').modal('hide')
 }
 
 const success = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const failure = (error) => {
-  console.error(error)
+  // console.error(error)
 }
 
 const gamePostSuccess = (data) => {
