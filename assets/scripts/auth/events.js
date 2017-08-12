@@ -50,7 +50,6 @@ const onCreateGame = function (event) {
 
 const onMakeMove = function (event) {
   event.preventDefault()
-  alert('Place Piece')
   const data = placePiece.gameValues
   api.makeMove(data.i, data.v, data.isOver)
     .then(ui.makeMoveSuccess)

@@ -44,22 +44,18 @@ const failure = (error) => {
 }
 
 const gamePostSuccess = (data) => {
-  console.log('well, ya did something')
   $('.game-board').show()
   app.game = data.game
   app.game.id = data.game.id
 }
 
 const makeMoveSuccess = () => {
-  console.log('made a move')
+  // console.log('made a move')
 }
 
 const getGameSuccess = (data) => {
-  console.log('getting games?')
-  console.log(data.games)
   $('#myAcct').modal('hide')
   $('#view-games-modal').modal('show')
-  // put this inside a for loop to loop through all games
   for (let i = 0; i < data.games.length; i++) {
     $('#games-content').append('<div>Game ID:' + data.games[i].id + '</div>')
     $('#games-content').append('<div>Game STATE:' + data.games[i].cells + '</div>')

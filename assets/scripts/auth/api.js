@@ -70,15 +70,13 @@ const retrieveGames = function () {
 }
 
 const makeMove = function (index, value, over) {
-  console.log('index is ' + index)
-  console.log('value is ' + value)
-  console.log('over is ' + over)
   return $.ajax({
     method: 'PATCH',
     url: app.host + '/games/' + app.game.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
+    // These values retrieved from an updated object in placePiece.js
     data: {
       'game': {
         'cell': {
@@ -90,15 +88,6 @@ const makeMove = function (index, value, over) {
     }
   })
 }
-// const index = function () {
-//   return $.ajax({
-//     url: app.host + '/games',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token
-//     }
-//   })
-// }
 
 module.exports = {
   signUp,
